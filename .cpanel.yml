@@ -1,0 +1,9 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/augmewcq/test.augmentedsol.com
+    - /bin/echo "Installing dependencies..."
+    - /opt/alt/alt-nodejs18/root/usr/bin/npm install
+    - /bin/echo "Building React app..."
+    - /opt/alt/alt-nodejs18/root/usr/bin/npm run build
+    - /bin/echo "Deploying build to test.augmentedsol.com..."
+    - /bin/cp -R build/* $DEPLOYPATH
